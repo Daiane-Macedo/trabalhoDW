@@ -7,7 +7,7 @@ package br.DAO;
 
 /**
  *
- * @author leandroall
+ * @author daiane
  */
 public class Administrador {
     private int id;

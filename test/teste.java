@@ -21,7 +21,7 @@ import java.util.logging.Level;
 
 /**
  *
- * @author leandroall
+ * @author daiane
  */
 public class teste {
     
@@ -48,7 +48,10 @@ public class teste {
             System.out.println("=============== Exclui cliente =========");
             cliente.setId(6);
             cliente_dado.Excluir(cliente);*/
-
+            System.out.println("========= Insere a Produto =====");
+            Produto prod = new Produto("coreI7",2 , 2553.20, "Notebook");
+            Produto_DAO proddao = new Produto_DAO();
+            proddao.Inserir(prod);
             
         } catch (Exception ex) {
            ex.printStackTrace();

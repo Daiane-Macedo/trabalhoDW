@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author leandroall
+ * @author daiane
  */
 public class Administrador_DAO {
     
