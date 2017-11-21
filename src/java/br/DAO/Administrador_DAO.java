@@ -5,7 +5,8 @@
  */
 package br.DAO;
 
-import br.DAO.Conexao;
+import br.model.Administrador;
+import br.model.Conexao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;

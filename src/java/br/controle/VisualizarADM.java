@@ -5,7 +5,7 @@
  */
 package br.controle;
 
-import br.DAO.Administrador;
+import br.model.Administrador;
 import br.DAO.Administrador_DAO;
 import java.io.IOException;
 import java.io.PrintWriter;

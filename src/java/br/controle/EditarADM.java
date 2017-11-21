@@ -5,7 +5,7 @@
  */
 package br.controle;
 
-import br.DAO.Administrador;
+import br.model.Administrador;
 import br.DAO.Administrador_DAO;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Leo
+ * @author daiane
  */
 @WebServlet(name = "EditarADM", urlPatterns = {"/EditarADM"})
 public class EditarADM extends HttpServlet {

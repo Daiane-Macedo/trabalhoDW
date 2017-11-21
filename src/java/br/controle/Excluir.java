@@ -5,7 +5,7 @@
  */
 package br.controle;
 
-import br.DAO.Cliente;
+import br.model.Cliente;
 import br.DAO.Cliente_DAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Leo
+ * @author daiane
  */
 @WebServlet(name = "Excluir", urlPatterns = {"/Excluir"})
 public class Excluir extends HttpServlet {

@@ -5,7 +5,7 @@
  */
 package br.controle;
 
-import br.DAO.Cliente;
+import br.model.Cliente;
 import br.DAO.Cliente_DAO;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;

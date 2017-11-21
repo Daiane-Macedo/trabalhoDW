@@ -1,7 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="br.DAO.Produto"%>
-<%@page import="br.DAO.Categoria"%>
+<%@page import="br.model.Produto"%>
+<%@page import="br.model.Categoria"%>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

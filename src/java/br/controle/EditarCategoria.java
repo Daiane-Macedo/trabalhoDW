@@ -5,7 +5,7 @@
  */
 package br.controle;
 
-import br.DAO.Categoria;
+import br.model.Categoria;
 import br.DAO.Categoria_DAO;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Leo
+ * @author daiane
  */
 @WebServlet(name = "EditarCategoria", urlPatterns = {"/EditarCategoria"})
 public class EditarCategoria extends HttpServlet {

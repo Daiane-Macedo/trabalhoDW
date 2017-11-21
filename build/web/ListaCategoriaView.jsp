@@ -1,5 +1,5 @@
 <%@page import="java.util.ArrayList"%>
-<%@page import="br.DAO.Categoria"%>
+<%@page import="br.model.Categoria"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

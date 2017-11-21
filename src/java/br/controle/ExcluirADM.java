@@ -5,7 +5,7 @@
  */
 package br.controle;
 
-import br.DAO.Administrador;
+import br.model.Administrador;
 import br.DAO.Administrador_DAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Leo
+ * @author daiane
  */
 @WebServlet(name = "ExcluirADM", urlPatterns = {"/ExcluirADM"})
 public class ExcluirADM extends HttpServlet {

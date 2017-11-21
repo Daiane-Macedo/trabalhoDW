@@ -1,4 +1,4 @@
-<%@page import="br.DAO.Administrador"%>
+<%@page import="br.model.Administrador"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

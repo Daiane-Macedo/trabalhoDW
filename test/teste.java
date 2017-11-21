@@ -9,6 +9,7 @@
  * @author daiane
  */
 
+import br.model.Compras;
 import br.DAO.*;
 import java.io.PrintStream;
 import java.util.logging.Level;
@@ -47,11 +48,15 @@ public class teste {
             /*
             System.out.println("=============== Exclui cliente =========");
             cliente.setId(6);
-            cliente_dado.Excluir(cliente);*/
+            cliente_dado.Excluir(cliente);
             System.out.println("========= Insere a Produto =====");
             Produto prod = new Produto("coreI7",2 , 2553.20, "Notebook");
             Produto_DAO proddao = new Produto_DAO();
-            proddao.Inserir(prod);
+            proddao.Inserir(prod);*/
+            System.out.println("========= Insere o Compras =====");
+            Compras comp = new Compras(9,2);
+            Compras_DAO compdado = new Compras_DAO();
+            compdado.Inserir(comp);
             
         } catch (Exception ex) {
            ex.printStackTrace();

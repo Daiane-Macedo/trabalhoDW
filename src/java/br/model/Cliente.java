@@ -1,4 +1,4 @@
-package br.DAO;
+package br.model;
 
 public class Cliente {
 

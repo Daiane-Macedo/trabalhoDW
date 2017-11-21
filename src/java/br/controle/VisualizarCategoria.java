@@ -5,7 +5,7 @@
  */
 package br.controle;
 
-import br.DAO.Categoria;
+import br.model.Categoria;
 import br.DAO.Categoria_DAO;
 import java.io.IOException;
 import java.io.PrintWriter;

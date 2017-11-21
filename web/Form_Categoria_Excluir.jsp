@@ -1,4 +1,4 @@
-<%@page import="br.DAO.Categoria"%>
+<%@page import="br.model.Categoria"%>
 <%@page import="br.controle.ExcluirCategoria"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

@@ -1,4 +1,4 @@
-<%@page import="br.DAO.Cliente"%>
+<%@page import="br.model.Cliente"%>
 <%@page import="br.controle.Editar"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -45,7 +45,7 @@
             <input type="text" name="cpf" value="<%=cliente.getCpf() %>">
             <br>
             RI(Identidade)<br>
-            <input type="text" name="ri" value="<%=cliente.getRg() %>">
+            <input type="text" name="rg" value="<%=cliente.getRg() %>">
             <br>
             CEP<br>
             <input type="text" name="cep" value="<%=cliente.getCep() %>">

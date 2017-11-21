@@ -1,6 +1,6 @@
 <%@page import="java.text.NumberFormat"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="br.DAO.Produto"%>
+<%@page import="br.model.Produto"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

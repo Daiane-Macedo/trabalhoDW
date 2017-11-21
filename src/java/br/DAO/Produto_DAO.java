@@ -6,6 +6,8 @@
 package br.DAO;
 
 
+import br.model.Produto;
+import br.model.Conexao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;

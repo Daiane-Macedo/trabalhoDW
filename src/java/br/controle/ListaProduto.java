@@ -11,7 +11,7 @@
  */
 package br.controle;
 
-import br.DAO.Produto;
+import br.model.Produto;
 import br.DAO.Produto_DAO;
 import java.io.IOException;
 import java.io.PrintWriter;
