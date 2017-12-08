@@ -8,14 +8,13 @@
     <body>
         <h1>Incluir Compras</h1>
         <form action="IncluirCompras" method="POST">
-           
-            <br>
-            Cliente
-            <input type="text" name="id_cliente" >
+            
+            ID Produto<br>
+            <input type="number" name="id_produto" >
             <br>
             
-            Produto<br>
-            <input type="text" name="id_produto" >
+            ID cliente<br>
+            <input type="number" name="id_cliente" >
             <br><br>
             <input type="submit" value="Submit">
         </form> 

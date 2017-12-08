@@ -37,7 +37,7 @@ public class ListaProduto extends HttpServlet {
         Produto_DAO prod_dao = new Produto_DAO();
         ArrayList<Produto> meusProdutos = prod_dao.Listar();
         request.setAttribute("meusProdutos", meusProdutos);
-// ====================  chamar o lista Produto view correto ======================================================        
+
         RequestDispatcher rd = request.getRequestDispatcher("ListaProdutoView.jsp");
         rd.forward(request, response);
 

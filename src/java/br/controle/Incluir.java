@@ -23,7 +23,6 @@ public class Incluir extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        // pegando os parâmetros do request
         String nome = request.getParameter("nome");
         String celular = request.getParameter("celular");
         String endereco= request.getParameter("endereco");
@@ -38,14 +37,13 @@ public class Incluir extends HttpServlet {
         String numero_cartao= request.getParameter("numero_cartao");
         String bandeira_cartao= request.getParameter("bandeira_cartao");
 
- // ========================================= faz a verificação de dados ============================================       
 
         try {
             
             request.setAttribute("erro_nome", "");
 
             if ((celular.isEmpty()) || (nome.isEmpty())) // verifica os dados
-            {  // retorna para o formulario de cliente
+            {  
 
                 if (nome.isEmpty()) {
                     request.setAttribute("erro_nome", "O nome não pode ser vazio");
@@ -64,7 +62,6 @@ public class Incluir extends HttpServlet {
                 try {
                     cliente_dao.Inserir(cliente);
                     request.setAttribute("mensagem", "Inclusão Com Sucesso");
-// =========================== se tudo ok chama metodo listar clientes passando para resposta =================================================================================================                    
                     request.setAttribute("retorna", "ListaCliente");
                     RequestDispatcher rd = request.getRequestDispatcher("Resposta.jsp");
                     rd.forward(request, response);
@@ -79,7 +76,6 @@ public class Incluir extends HttpServlet {
         } catch (Exception e) {
             request.setAttribute("erro_nome", "O nome não pode ser vazio");
             request.setAttribute("erro_celular", "O celular não pode ser vazio");
-  //========================= se algum dado estiver errado devolve ===========================          
             RequestDispatcher rd = request.getRequestDispatcher("Form_Cliente.jsp");
             rd.forward(request, response);
         }

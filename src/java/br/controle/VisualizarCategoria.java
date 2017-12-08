@@ -33,7 +33,7 @@ public class VisualizarCategoria extends HttpServlet {
         try {
             categoria_dao.get(categoria);
             request.setAttribute("categoria", categoria);
-// =============================== chama o form de vizualizar o categoria ======================================
+
             RequestDispatcher rd = request.getRequestDispatcher("Form_Categoria_Visualizar.jsp");
             rd.forward(request, response);
 

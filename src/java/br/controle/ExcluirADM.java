@@ -33,7 +33,6 @@ public class ExcluirADM extends HttpServlet {
         try {
             administrador_dao.get(administrador);
             request.setAttribute("administrador", administrador);
-//=========================== chamar o form de exclusão correto  =======================================================================
             RequestDispatcher rd = request.getRequestDispatcher("Form_Administrador_Excluir.jsp");
             rd.forward(request, response);
 
@@ -54,7 +53,6 @@ public class ExcluirADM extends HttpServlet {
                 try {
                     administradorinistrador_dao.Excluir(administrador);
                     request.setAttribute("mensagem", "Exclusão Com Sucesso");
- // ================================= chama o metodo de Listar ADM =================================================================================                   
                     request.setAttribute("retorna", "ListaADM");
                     RequestDispatcher rd = request.getRequestDispatcher("Resposta.jsp");
                     rd.forward(request, response);

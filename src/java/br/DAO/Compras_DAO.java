@@ -17,6 +17,7 @@ import java.util.ArrayList;
  * @author daiane
  */
 public class Compras_DAO {
+    
     public void Inserir(Compras comp) throws Exception {
         Conexao conexao = new Conexao();
         try {
@@ -41,8 +42,8 @@ public class Compras_DAO {
             ResultSet resultado = sql.executeQuery();
             if (resultado != null) {
                 while (resultado.next()) {
-                    comp.setIdcliente(Integer.parseInt(resultado.getString("id_cliente")));
-                    comp.setIdproduto(Integer.parseInt(resultado.getString("id_produto")));
+                    comp.setIdcliente(resultado.getInt("id_cliente"));
+                    comp.setIdproduto(resultado.getInt("id_produto"));
                 }
             }
             return comp;
@@ -99,9 +100,9 @@ public class Compras_DAO {
             if (resultado != null) {
                 while (resultado.next()) {
                     Compras comp;
-                    comp = new Compras(Integer.parseInt(resultado.getString("ID")),
-                           Integer.parseInt(resultado.getString("ID_CLIENTE"),
-                           Integer.parseInt(resultado.getString("ID_PRODUTO"))));
+                    comp = new Compras(resultado.getInt("ID"),
+                           resultado.getInt("ID_CLIENTE"),
+                           resultado.getInt("ID_PRODUTO"));
                     minhasCompras.add(comp);
                 }
             }

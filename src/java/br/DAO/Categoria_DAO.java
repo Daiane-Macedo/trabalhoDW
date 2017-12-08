@@ -97,7 +97,7 @@ public class Categoria_DAO {
                 while (resultado.next()) {
                     Categoria categoria;
                     categoria = new Categoria(Integer.parseInt(resultado.getString("ID")),
-                            resultado.getString("DESCRICAO"));
+                    resultado.getString("DESCRICAO"));
                     minhasCategorias.add(categoria);
                 }
             }

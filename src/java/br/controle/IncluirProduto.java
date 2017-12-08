@@ -23,13 +23,11 @@ public class IncluirProduto extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        // pegando os parâmetros do request
         String nome = request.getParameter("nome");
         String descricao= request.getParameter("descricao");
         int id_categoria = Integer.parseInt(request.getParameter("id_categoria"));
         double valor = Double.parseDouble(request.getParameter("valor"));
 
- // ========================================= faz a verificação de dados ============================================       
 
         try {
             
@@ -52,7 +50,6 @@ public class IncluirProduto extends HttpServlet {
                  if (valor < 0) {
                     request.setAttribute("erro_val", " valor negativo");
                 }
-// ====================================== se dados errados chama o forms de insere Produto novamente ==========================
                 RequestDispatcher rd = request.getRequestDispatcher("Form_Produto.jsp");
                 rd.forward(request, response);
             } else {
@@ -62,7 +59,6 @@ public class IncluirProduto extends HttpServlet {
                 try {
                     prod_dao.Inserir(prod);
                     request.setAttribute("mensagem", "Inclusão Com Sucesso");
-// =========================== se tudo ok chama metodo listar Produto passando para resposta =================================================================================================                    
                     request.setAttribute("retorna", "ListaProduto");
                     RequestDispatcher rd = request.getRequestDispatcher("Resposta.jsp");
                     rd.forward(request, response);
@@ -79,7 +75,7 @@ public class IncluirProduto extends HttpServlet {
             request.setAttribute("erro_descricao", "A descricao não pode ser vazia");
             request.setAttribute("erro_cat", "categoria invalida");
               request.setAttribute("erro_val", " valor negativo");
-  //========================= se algum dado estiver errado devolve o form do produto ===========================          
+
             RequestDispatcher rd = request.getRequestDispatcher("Form_Contato.jsp");
             rd.forward(request, response);
         }

@@ -33,7 +33,7 @@ public class VisualizarCompra extends HttpServlet {
         try {
             comp_dao.get(comp);
             request.setAttribute("comp", comp);
-// =============================== chama o form de vizializar o comp ======================================
+
             RequestDispatcher rd = request.getRequestDispatcher("Form_Compras_Visualizar.jsp");
             rd.forward(request, response);
 

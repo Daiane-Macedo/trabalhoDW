@@ -17,11 +17,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Daiane
+ * @author daiane
  */
 @WebServlet(name = "Editar", urlPatterns = {"/Editar"})
 public class Editar extends HttpServlet {
-// ==================================  entra aqui depois de ter listado os clientes logo ja possui o id dele ========================
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -32,7 +31,6 @@ public class Editar extends HttpServlet {
         try {
             cliente_dao.get(cliente);
             request.setAttribute("cliente", cliente);
-// =========================================== Aqui chama o forms de edição do Cliente fazer a troca =================================
             RequestDispatcher rd = request.getRequestDispatcher("Form_Cliente_Editar.jsp");
             rd.forward(request, response);
 
@@ -62,7 +60,6 @@ public class Editar extends HttpServlet {
         
         Cliente cliente = new Cliente(id, nome, celular, endereco, bairro,  cidade, estado, cpf, rg, cep, referencia, telefone, numero_cartao, bandeira_cartao);
 
-//  ======================================  Aqui faz a verificacao se os dados passados para a alteracao estao corretos se algum dado estuver errado devolve ==========================================================================        
         
         try {
             if ((celular.isEmpty()) || (nome.isEmpty())) // verifica os dados
@@ -76,7 +73,6 @@ public class Editar extends HttpServlet {
                     request.setAttribute("erro_celular", "O celular não pode ser vazio");
                 }
 
-//========================= se algum dado estiver errado devolve ===========================
 
                 request.setAttribute("cliente", cliente);
                 RequestDispatcher rd = request.getRequestDispatcher("Form_Cliente_Editar.jsp");
@@ -87,7 +83,6 @@ public class Editar extends HttpServlet {
                 try {
                     cliente_dao.Alterar(cliente);
                     request.setAttribute("mensagem", "Alterado Com Sucesso");
-// =========================== se tudo ok chama metodo listar clientes passando para resposta =================================================================================================                                       
                     request.setAttribute("retorna", "ListaCliente");
                     RequestDispatcher rd = request.getRequestDispatcher("Resposta.jsp");
                     rd.forward(request, response);

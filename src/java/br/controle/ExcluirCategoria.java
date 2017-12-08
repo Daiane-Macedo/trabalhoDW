@@ -33,7 +33,6 @@ public class ExcluirCategoria extends HttpServlet {
         try {
             cat_dao.get(categoria);
             request.setAttribute("categoria", categoria);
-//=========================== chamar o form de exclusão correto  para Categoria =======================================================================
             RequestDispatcher rd = request.getRequestDispatcher("Form_Categoria_Excluir.jsp");
             rd.forward(request, response);
 
@@ -54,7 +53,6 @@ public class ExcluirCategoria extends HttpServlet {
                 try {
                     cat_dao.Excluir(categoria);
                     request.setAttribute("mensagem", "Exclusão Com Sucesso");
- // ================================= chama o metodo de Listar Categoria =================================================================================                   
                     request.setAttribute("retorna", "ListaCategoria");
                     RequestDispatcher rd = request.getRequestDispatcher("Resposta.jsp");
                     rd.forward(request, response);

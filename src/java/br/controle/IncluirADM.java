@@ -22,24 +22,22 @@ public class IncluirADM extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // pegando os parâmetros do request
+
         String loggin= request.getParameter("loggin");
         String senha= request.getParameter("senha");
 
- // ========================================= faz a verificação de dados ============================================       
 
         try {
             
             request.setAttribute("erro_senha", "");
-            if ((senha.isEmpty() ))// verifica os dados
-            {  // retorna para o formulario de ADMINISTRADOR
+            if ((senha.isEmpty() ))
+            {  
 
 
                 if (senha.isEmpty()) {
                     request.setAttribute("erro_senha", "A senha não pode ser vazia");
                 }
                 
-// ====================================== se dados errados chama o forms de insere ADM novamente ==========================
                 RequestDispatcher rd = request.getRequestDispatcher("Form_Administrador.jsp");
                 rd.forward(request, response);
             } else {
@@ -49,7 +47,6 @@ public class IncluirADM extends HttpServlet {
                 try {
                     adm_dao.Inserir(adm);
                     request.setAttribute("mensagem", "Inclusão Com Sucesso");
-// =========================== se tudo ok chama metodo listar clientes passando para resposta =================================================================================================                    
                     request.setAttribute("retorna", "ListaADM");
                     RequestDispatcher rd = request.getRequestDispatcher("Resposta.jsp");
                     rd.forward(request, response);
@@ -63,7 +60,6 @@ public class IncluirADM extends HttpServlet {
 
         } catch (Exception e) {
             request.setAttribute("erro_senha", "A senha não pode ser vazia");
-  //========================= se algum dado estiver errado devolve o form do ADM ===========================          
             RequestDispatcher rd = request.getRequestDispatcher("Form_Administrador.jsp");
             rd.forward(request, response);
         }

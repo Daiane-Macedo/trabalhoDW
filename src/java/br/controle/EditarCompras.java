@@ -8,7 +8,6 @@ package br.controle;
 import br.model.Compras;
 import br.DAO.Compras_DAO;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,20 +19,21 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author daiane
  */
-@WebServlet(name = "ExcluirCompras", urlPatterns = {"/ExcluirCompras"})
-public class ExcluirCompras extends HttpServlet {
+@WebServlet(name = "EditarCompras", urlPatterns = {"/EditarCompras"})
+public class EditarCompras extends HttpServlet {
 
-     @Override
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         int id = Integer.parseInt(request.getParameter("id"));
-        Compras compras = new Compras(id);
-        Compras_DAO compras_dao = new Compras_DAO();
+        Compras comp = new Compras(id);
+        Compras_DAO comp_dao = new Compras_DAO();
         try {
-            compras_dao.get(compras);
-            request.setAttribute("compras", compras);
-            RequestDispatcher rd = request.getRequestDispatcher("Form_Compras_Excluir.jsp");
+            comp_dao.get(comp);
+            request.setAttribute("compras", comp);
+
+            RequestDispatcher rd = request.getRequestDispatcher("Form_Compras_Editar.jsp");
             rd.forward(request, response);
 
         } catch (Exception e) {
@@ -45,28 +45,42 @@ public class ExcluirCompras extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        int id = Integer.parseInt(request.getParameter("id"));
+		int id = Integer.parseInt(request.getParameter("id"));
+		int id_cliente = Integer.parseInt(request.getParameter("id_cliente"));
+		int id_produto = Integer.parseInt(request.getParameter("id_produto"));
 
-        Compras compras = new Compras(id);
+        Compras comp = new Compras(id, id_cliente, id_produto);
         try {
-                Compras_DAO comprasras_dao = new Compras_DAO();
+            if ((id < 1)||(id_produto < 1 || id_cliente <1)) // verifica os dados
+            {  // retorna para o formulario de contato
+
+                    request.setAttribute("erro_compras", "Compra inválida");
+                    request.setAttribute("comp", comp);
+                     
+                RequestDispatcher rd = request.getRequestDispatcher("Form_Compras_Editar.jsp");
+                rd.forward(request, response);
+            } else {
+                Compras_DAO comp_dao = new Compras_DAO();
                 try {
-                    comprasras_dao.Excluir(compras);
-                    request.setAttribute("mensagem", "Exclusão Com Sucesso");
+                    comp_dao.Alterar(comp);
+                    request.setAttribute("mensagem", "Alterado Com Sucesso");
                     request.setAttribute("retorna", "ListaCompras");
                     RequestDispatcher rd = request.getRequestDispatcher("Resposta.jsp");
                     rd.forward(request, response);
+
                 } catch (Exception e) {
                     RequestDispatcher rd = request.getRequestDispatcher("Erro.jsp");
                     rd.forward(request, response);
                 }
 
-            
+            }
 
         } catch (Exception e) {
-            RequestDispatcher rd = request.getRequestDispatcher("Erro.jsp");
+            request.setAttribute("erro_compras", "Compra inexistente");
+            RequestDispatcher rd = request.getRequestDispatcher("Form_Compras.jsp");
             rd.forward(request, response);
         }
 
     }
+
 }

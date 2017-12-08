@@ -33,7 +33,7 @@ public class VisualizarADM extends HttpServlet {
         try {
             administrador_dao.get(administrador);
             request.setAttribute("administrador", administrador);
-// =============================== chama o form de vizializar o administrador ======================================
+
             RequestDispatcher rd = request.getRequestDispatcher("Form_Admnistrador_Visualizar.jsp");
             rd.forward(request, response);
 

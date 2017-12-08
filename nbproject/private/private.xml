@@ -3,9 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/daiane/Desktop/EX17/test/teste.java</file>
-            <file>file:/home/daiane/Desktop/EX17/test/sql.sql</file>
-            <file>file:/home/daiane/Desktop/EX17/web/WEB-INF/Form_Administrador.jsp</file>
+            <file>file:/home/daiane/Desktop/trabalhoDW/src/java/br/DAO/Categoria_DAO.java</file>
+            <file>file:/home/daiane/Desktop/trabalhoDW/src/java/br/controle/IncluirProduto.java</file>
+            <file>file:/home/daiane/Desktop/trabalhoDW/src/java/br/controle/VisualizarADM.java</file>
+            <file>file:/home/daiane/Desktop/trabalhoDW/web/index.html</file>
+            <file>file:/home/daiane/Desktop/trabalhoDW/src/java/br/controle/IncluirCompras.java</file>
+            <file>file:/home/daiane/Desktop/trabalhoDW/src/java/br/controle/ListaProduto.java</file>
+            <file>file:/home/daiane/Desktop/trabalhoDW/src/java/br/controle/VisualizarCategoria.java</file>
+            <file>file:/home/daiane/Desktop/trabalhoDW/src/java/br/DAO/Administrador_DAO.java</file>
+            <file>file:/home/daiane/Desktop/trabalhoDW/src/java/br/controle/ListaCategoria.java</file>
+            <file>file:/home/daiane/Desktop/trabalhoDW/src/java/br/controle/VisualizarCompra.java</file>
+            <file>file:/home/daiane/Desktop/trabalhoDW/src/java/br/controle/Incluir.java</file>
+            <file>file:/home/daiane/Desktop/trabalhoDW/src/java/br/controle/EditarADM.java</file>
+            <file>file:/home/daiane/Desktop/trabalhoDW/src/java/br/controle/IncluirADM.java</file>
+            <file>file:/home/daiane/Desktop/trabalhoDW/test/sql.sql</file>
         </group>
     </open-files>
 </project-private>

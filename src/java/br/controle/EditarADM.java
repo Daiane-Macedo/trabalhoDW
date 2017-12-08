@@ -52,7 +52,7 @@ public class EditarADM extends HttpServlet {
         Administrador administrador = new Administrador(id, loggin, senha);
         try {
             if ((loggin.isEmpty()) || (senha.isEmpty())) // verifica os dados
-            {  // retorna para o formulario de administrador
+            {  
 
                 if (loggin.isEmpty()) {
                     request.setAttribute("erro_login", "O login não pode ser vazio");

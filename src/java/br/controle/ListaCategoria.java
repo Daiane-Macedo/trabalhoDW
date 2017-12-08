@@ -37,7 +37,7 @@ public class ListaCategoria extends HttpServlet {
         Categoria_DAO cat_dado = new Categoria_DAO();
         ArrayList<Categoria> minhasCategorias = cat_dado.Listar();
         request.setAttribute("minhasCategorias", minhasCategorias);
-// ====================  chamar o lista ADM  view correto ======================================================        
+
         RequestDispatcher rd = request.getRequestDispatcher("ListaCategoriaView.jsp");
         rd.forward(request, response);
 

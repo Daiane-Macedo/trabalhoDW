@@ -23,10 +23,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author leandro
- */
 @WebServlet(name = "ListaCompras", urlPatterns = {"/ListaCompras"})
 public class ListaCompras extends HttpServlet {
 
@@ -37,7 +33,7 @@ public class ListaCompras extends HttpServlet {
         Compras_DAO compras_dao = new Compras_DAO();
         ArrayList<Compras> minhasCompras = compras_dao.Listar();
         request.setAttribute("minhasCompras", minhasCompras);
-// ====================  chamar o lista compras view correto ======================================================        
+
         RequestDispatcher rd = request.getRequestDispatcher("ListaComprasView.jsp");
         rd.forward(request, response);
 

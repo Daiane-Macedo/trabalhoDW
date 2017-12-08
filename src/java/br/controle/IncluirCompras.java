@@ -29,10 +29,9 @@ public class IncluirCompras extends HttpServlet {
             throws ServletException, IOException {
 
         // pegando os parâmetros do request
-       int id_cliente = Integer.parseInt("id_cliente");
-       int id_produto= Integer.parseInt("id_produto");
+       int id_cliente = Integer.parseInt(request.getParameter("id_cliente"));
+       int id_produto = Integer.parseInt(request.getParameter("id_produto"));
 
- // ========================================= faz a verificação de dados ============================================       
 
         try {
             
@@ -49,7 +48,6 @@ public class IncluirCompras extends HttpServlet {
                     request.setAttribute("erro_id_produto", "ID produto informado invalido");
                 }
 
-// ====================================== se dados errados chama o forms de insere Compras novamente ==========================
                 RequestDispatcher rd = request.getRequestDispatcher("Form_Contato.jsp");
                 rd.forward(request, response);
             } else {
@@ -59,7 +57,6 @@ public class IncluirCompras extends HttpServlet {
                 try {
                     comp_dao.Inserir(comp);
                     request.setAttribute("mensagem", "Inclusão Com Sucesso");
-// =========================== se tudo ok chama metodo listar clientes passando para resposta =================================================================================================                    
                     request.setAttribute("retorna", "ListaCompras");
                     RequestDispatcher rd = request.getRequestDispatcher("Resposta.jsp");
                     rd.forward(request, response);
@@ -74,7 +71,6 @@ public class IncluirCompras extends HttpServlet {
         } catch (Exception e) {
             request.setAttribute("erro_id_cliente", "ID cliente informado invalido");
             request.setAttribute("erro_id_produto", "ID produto informado invalido");
-  //========================= se algum dado estiver errado devolve o form do Compras  ===========================          
             RequestDispatcher rd = request.getRequestDispatcher("Form_Contato.jsp");
             rd.forward(request, response);
         }

@@ -7,6 +7,7 @@
         <title>CRUD em servlet</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <style>
             table {
                 font-family: arial, sans-serif;
@@ -23,37 +24,31 @@
             tr:nth-child(even) {
                 background-color: #dddddd;
             }
-        </style>    </head>
+        </style>
+    </head>
     <body>
-        <%!
-            ArrayList<Compras> resultado;
-                    
-        %>
-                    
-        <h1>Lista de Compras</h1>
+        <h1>Lista de Comprass</h1>
         <a href="Form_Compras.jsp">Incluir Compras</a>
         <p></p>
         <table>
             <thead>
-            <th>Pedido</th>
+            <th>Id</th>
             <th>Cliente</th>
+            <th>Produto</th>
             <th>Ações</th>
         </thead>
         <%
-            resultado = (ArrayList<Compras>) request.getAttribute("minhasCompras");
-            if (resultado.size() > 0){
-                for (int i = 0; i < resultado.size(); i++) {
+            ArrayList<Compras> resultado = (ArrayList) request.getAttribute("minhasCompras");
+            for (int i = 0; i < resultado.size(); i++) {
                 Compras aux = (Compras)resultado.get(i);
         %>
         <tr>
         <td><%=aux.getId()%></td>
         <td><%=aux.getIdcliente()%></td> 
         <td><%=aux.getIdproduto()%></td>
-        
         <td><a href="VisualizarCompras?id=<%=aux.getId()%>">Visualizar</a> | <a href="EditarCompras?id=<%=aux.getId()%>">Editar</a> | <a href="ExcluirCompras?id=<%=aux.getId()%>">Excluir</a></td>
         </tr>
         <%
-            }
             }
         %>
 

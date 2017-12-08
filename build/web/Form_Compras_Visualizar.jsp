@@ -17,20 +17,19 @@
     </head>
     <body>
         <h1>Lista de Compras</h1>
-        <h1>Dados das Compras</h1>
-        <% Compras compras = (Compras) request.getAttribute("compras"); 
+        <h1>Dados do Compras</h1>
+        <% Compras compras = (Compras) request.getAttribute("comp"); 
         %>
         <form action="ListaCompras" method="GET">
             
             <input type="hidden" name="id" value="<%=compras.getId()%>" >
-            
            
-            Cliente<br>
+            ID Cliente<br>
             <input type="text" name="id_cliente" value="<%=compras.getIdcliente() %>" readonly="true" >
             <br>
             
-            Produto<br>
-            <input type="text" name="id_produdo" value="<%=compras.getIdproduto()%>" readonly="true" >
+            ID Produto:<br>
+            <input type="text" name="id_produto" value="<%=compras.getIdproduto()%>" readonly="true" >
             <br><br>
             <a href="ListaCompras">Retorna</a>
         </form> 

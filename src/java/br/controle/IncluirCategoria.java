@@ -26,7 +26,6 @@ public class IncluirCategoria extends HttpServlet {
         // pegando os parâmetros do request
         String descricao= request.getParameter("descricao");
 
- // ========================================= faz a verificação de dados ============================================       
 
         try {
             
@@ -37,7 +36,6 @@ public class IncluirCategoria extends HttpServlet {
 
              request.setAttribute("erro_descricao", "O nome não pode ser vazio");
                 
-// ====================================== se dados errados chama o forms de insere ADM novamente ==========================
                 RequestDispatcher rd = request.getRequestDispatcher("Form_Categoria.jsp");
                 rd.forward(request, response);
             } else {
@@ -47,7 +45,6 @@ public class IncluirCategoria extends HttpServlet {
                 try {
                     cat_dao.Inserir(cat);
                     request.setAttribute("mensagem", "Inclusão Com Sucesso");
-// =========================== se tudo ok chama metodo listar Categorias passando para resposta =================================================================================================                    
                     request.setAttribute("retorna", "ListaCategoria");
                     RequestDispatcher rd = request.getRequestDispatcher("Resposta.jsp");
                     rd.forward(request, response);
@@ -61,7 +58,6 @@ public class IncluirCategoria extends HttpServlet {
 
         } catch (Exception e) {
             request.setAttribute("erro_descricao", "O nome não pode ser vazio");
-  //========================= se algum dado estiver errado devolve o form do ADM ===========================          
             RequestDispatcher rd = request.getRequestDispatcher("Form_Categoria.jsp");
             rd.forward(request, response);
         }

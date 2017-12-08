@@ -17,20 +17,21 @@
     </head>
     <body>
         <h1>Lista de Compras</h1>
-        <h1>Dados do Compras</h1>
-        <% Compras compras = (Compras) request.getAttribute("comp"); 
+        <h1>Excluir Compras</h1>
+        <% Compras compras = (Compras) request.getAttribute("compras"); 
         %>
-        <form action="ListaCompras" method="GET">
+        <form action="ExcluirCompras" method="Post">
             
             <input type="hidden" name="id" value="<%=compras.getId()%>" >
-           
-            ID Cliente<br>
-            <input type="text" name="id_cliente" value="<%=compras.getIdcliente() %>" readonly="true" >
+          
+            Cliente<br>
+            <input type="text" name="id_cliente" value="<%=compras.getIdcliente() %>" readonly="" >
             <br>
-            
-            ID Produto:<br>
-            <input type="text" name="id_produto" value="<%=compras.getIdproduto()%>" readonly="true" >
+          
+            Produto: <br>
+            <input type="text" name="id_produto" value="<%=compras.getIdproduto()%>" readonly="" >
             <br><br>
+            <input type="submit" value="Confirmar Exclusão">
             <a href="ListaCompras">Retorna</a>
         </form> 
     </body>

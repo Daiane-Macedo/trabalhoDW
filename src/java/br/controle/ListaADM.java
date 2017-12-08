@@ -25,7 +25,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author leandro
+ * @author daiane
  */
 @WebServlet(name = "ListaADM", urlPatterns = {"/ListaADM"})
 public class ListaADM extends HttpServlet {
@@ -37,7 +37,7 @@ public class ListaADM extends HttpServlet {
         Administrador_DAO adm_dao = new Administrador_DAO();
         ArrayList<Administrador> meusADM = adm_dao.Listar();
         request.setAttribute("meusADM", meusADM);
-// ====================  chamar o lista ADM  view correto ======================================================        
+
         RequestDispatcher rd = request.getRequestDispatcher("ListaAdministradorView.jsp");
         rd.forward(request, response);
 
